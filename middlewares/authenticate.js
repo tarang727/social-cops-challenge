@@ -1,13 +1,16 @@
 /* global module */
 'use strict';
 
+// Including the packages.
 const express = require('express');
 let app = express();
 const jwt = require('jsonwebtoken');
 
+// Including the local files.
 const config = require('../config');
 app.set('mysecret', config.secret);
 
+// The middleware function for authentication.
 module.exports = (req, res, next) => {
   // check header, or url parameter, or post parameter
   const token = req.body.token || req.query.token || req.headers['token'];

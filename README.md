@@ -29,7 +29,7 @@ The following two endpoints should be protected. The JWT obtained in the “Logi
   * Download the image, resize to 50x50 pixels, and return the resulting thumbnail.
 
 
-###d Fulfilled Requirements  
+### Fulfilled Requirements  
 1. Code Requirements -
   * Included [Mocha](https://mochajs.org/) as a test suite for the microservice.
   * Used modern javascript ES6 syntax.

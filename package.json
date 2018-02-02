@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "nyc mocha --exit"
+    "test": "nyc --reporter=html --reporter=text mocha --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "coveralls": "^3.0.0",
     "eslint": "^4.16.0",
     "mocha": "^5.0.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^11.4.1"
   }
 }

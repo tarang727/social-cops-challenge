@@ -40,7 +40,7 @@ ___
     * Project installs all dependencies with `npm install`, starts the server with `npm start`, and runs the test suite with `npm test`.
 3. Bonus Points
     * 100% code coverage in test suite by [Istanbul](https://github.com/gotwarlost/istanbul).
-    * ~~Include JSdoc comments and/or Swagger specifications to impress us.~~
+    * Included Swagger specifications. Copy paste the contents of swagger.yaml to [Swagger](http://editor.swagger.io).
     * Integrated a centralized app logging/monitoring system using `morgan`.
     * Used [esLint](https://eslint.org) for Javascript Style and Linting.
     * ~~Include a working Dockerfile with the app directory.~~

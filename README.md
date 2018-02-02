@@ -21,6 +21,7 @@ The API features the following endpoint functionalities
     * Return a signed [Json Web Token](https://jwt.io/) which can be used to validate future requests.
 
 **Protected Endpoints**  
+
 The following two endpoints should be protected. The JWT obtained in the _/login_ endpoint must be attached to each request.  If the JWT is missing or invalid, these endpoints should reject the request.
 1. */api/apply_json_patch*
     * Request body should contain a JSON object and a [JSON patch object](http://jsonpatch.com/).
@@ -51,8 +52,9 @@ ___
 2. Run `npm install` to install all the dependencies
 3. Run `npm test` to see all the test cases pass.
     * Make sure you are connected to the internet for the */api/create_thumbnail* endpoint as the image is fetched from the internet.
-4. Use your favourite REST client to test HTTP tools.
+4. Copy the contents of [swagger.yaml](./swagger.yaml) file and paste it in the [Editor](http://editor.swagger.io) to better understand the API.
+5. Use your favourite REST client to test HTTP tools.
     * I prefer [Insomnia](https://insomnia.rest). 
     * You could also use [POSTman](https://www.getpostman.com).
-5. You can test the endpoints.
+6. You can test the endpoints.
     * The protected endpoints **should include JWT in the header as `token`** for them to respond successfully.

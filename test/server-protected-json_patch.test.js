@@ -1,3 +1,4 @@
+/* global process, describe, it */
 'use strict';
 
 process.env.NODE_ENV = 'test';
@@ -8,7 +9,7 @@ const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoi
 const incorrectToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoicmFodWwiLCJwYXNzd29yZCI6InBhc3N3b3JkIn0sImlhdCI6MTUxNzQxNTQ5OSwiZXhwIjoxNTE4Mjc5NDk5fQ.IHN-c4gt4REBPH74K7DTynbdQ5yCt2_bMd4nLCQfd0K';
 
 let { app } = require('../server');
-let should = chai.should();
+chai.should();
 
 chai.use(chaiHttp);
 
@@ -17,14 +18,14 @@ describe('Protected Endpoints: JSON_PATCH', () => {
     chai.request(app)
       .post('/api/apply_json_patch')
       .send({
-        "obj": {
-          "baz": "qux",
-          "foo": "bar"
+        'obj': {
+          'baz': 'qux',
+          'foo': 'bar'
         },
-        "patch": [
-          { "op": "replace", "path": "/baz", "value": "boo" },
-          { "op": "add", "path": "/hello", "value": ["world"] },
-          { "op": "remove", "path": "/foo"}
+        'patch': [
+          { 'op': 'replace', 'path': '/baz', 'value': 'boo' },
+          { 'op': 'add', 'path': '/hello', 'value': ['world'] },
+          { 'op': 'remove', 'path': '/foo'}
         ]
       })
       .set('token', token)
@@ -44,8 +45,8 @@ describe('Protected Endpoints: JSON_PATCH', () => {
           foo: 'bar'
         },
         patch: [
-          { "op": "remove", "path": "/foo" },
-          { "op": "remove", "path": "/baz" }
+          { 'op': 'remove', 'path': '/foo' },
+          { 'op': 'remove', 'path': '/baz' }
         ]
       })
       .set('token', token)
@@ -61,8 +62,8 @@ describe('Protected Endpoints: JSON_PATCH', () => {
       .post('/api/apply_json_patch')
       .send({
         patch: [
-          { "op": "remove", "path": "/foo" },
-          { "op": "remove", "path": "/baz" }
+          { 'op': 'remove', 'path': '/foo' },
+          { 'op': 'remove', 'path': '/baz' }
         ]
       })
       .end((err, res) => {
@@ -79,8 +80,8 @@ describe('Protected Endpoints: JSON_PATCH', () => {
       .post('/api/apply_json_patch')
       .send({
         patch: [
-          { "op": "remove", "path": "/foo" },
-          { "op": "remove", "path": "/baz" }
+          { 'op': 'remove', 'path': '/foo' },
+          { 'op': 'remove', 'path': '/baz' }
         ]
       })
       .set('token', incorrectToken)
@@ -93,7 +94,7 @@ describe('Protected Endpoints: JSON_PATCH', () => {
         done();
       });
   });
-  it('POST /api/apply_json_patch should return a status 400 if neither of the JSON object is passed.', (done) => {
+  it('POST /api/apply_json_patch should return a status 400 if neither of the JSON objects are passed.', (done) => {
     chai.request(app)
       .post('/api/apply_json_patch')
       .send({})
@@ -131,8 +132,8 @@ describe('Protected Endpoints: JSON_PATCH', () => {
       .post('/api/apply_json_patch')
       .send({
         patch: [
-          { "op": "remove", "path": "/foo" },
-          { "op": "remove", "path": "/baz" }
+          { 'op': 'remove', 'path': '/foo' },
+          { 'op': 'remove', 'path': '/baz' }
         ]
       })
       .set('token', token)

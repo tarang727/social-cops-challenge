@@ -1,3 +1,4 @@
+/* global process, describe, it */
 'use strict';
 
 process.env.NODE_ENV = 'test';
@@ -5,8 +6,8 @@ process.env.NODE_ENV = 'test';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-let { app, apiRoutes } = require('../server');
-let should = chai.should();
+let { app } = require('../server');
+chai.should();
 
 chai.use(chaiHttp);
 

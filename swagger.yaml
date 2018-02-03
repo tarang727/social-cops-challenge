@@ -141,6 +141,10 @@ paths:
           description: OK
           schema:
             type: object
+            properties:
+              foo:
+                type: string
+                example: bar
         400:
           description: Parameter(s) missing.
           schema:

@@ -49,9 +49,18 @@ ___
 
 ## INSTRUCTIONS
 1. Clone the repository
-2. Run `npm install` to install all the dependencies
-3. Run `npm test` to see all the test cases pass.
+  ```
+  $> git clone https://github.com/itch96/social-cops-challenge.git
+  ```
+2. Install all the dependencies. Make sure you are inside the `social-cops-challenge` folder.
+  ```
+  $> npm install
+  ```
+3. See all the test cases pass.
     * Make sure you are connected to the internet for the */api/create_thumbnail* endpoint as the image is fetched from the internet.
+  ```
+  $> npm test
+  ```
 4. Copy the contents of [swagger.yaml](./swagger.yaml) file and paste it in the [Editor](http://editor.swagger.io) to better understand the API.
 5. Use your favourite REST client to test HTTP tools.
     * I prefer [Insomnia](https://insomnia.rest). 

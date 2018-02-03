@@ -62,8 +62,12 @@ ___
   $> npm test
   ```
 4. Copy the contents of [swagger.yaml](./swagger.yaml) file and paste it in the [Editor](http://editor.swagger.io) to better understand the API.
-5. Use your favourite REST client to test HTTP tools.
+5. Start the API server.
+  ```
+  $> npm start
+  ```
+6. Use your favourite REST client to test HTTP tools. **Make sure you are runnig the API server before moving forward. See step (5).**
     * I prefer [Insomnia](https://insomnia.rest). 
     * You could also use [POSTman](https://www.getpostman.com).
-6. You can test the endpoints.
+7. You can test the endpoints.
     * The protected endpoints **should include JWT in the header as `token`** for them to respond successfully.
